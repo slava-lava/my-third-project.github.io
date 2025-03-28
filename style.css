@@ -1,0 +1,315 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #f8f8f8;
+    font-family: "TTLakes-Medium", sans-serif;
+}
+
+.brands {
+    
+    padding-bottom: 40px;
+    position: relative;
+    
+}
+
+.brands__title {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: -0.2px;
+    text-transform: uppercase;
+    padding: 16px 0px  16px 16px;
+    color: rgba(126, 126, 130, 1);
+    background-color: white;
+    margin-top:0;
+    margin-bottom:20px;
+    
+    
+}
+
+.brands__list {
+    margin-left: 16px;
+    display: flex;
+    gap: 16px;
+}
+
+.brands__item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 240px;
+    height: 72px;
+    padding: 0 16px;
+    background: #fff;
+    border: 1px solid rgba(234, 234, 234, 1);
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    margin-right: 0 !important;
+}
+
+.brands__logo {
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.brand-lenovo {
+    background-image: url('image/lenovo.svg');
+    width: 108px;
+    height: 32px;
+}
+
+.brand-samsung {
+    background-image: url('image/samsung.svg');
+    width: 116px;
+    height: 38px;
+}
+
+.brand-apple {
+    background-image: url('image/apple.svg');
+    width: 44px;
+    height: 44px;
+}
+
+.brand-bosch {
+    background-image: url('image/bosch.svg');
+    width: 128px;
+    height: 28px;
+}
+
+.brand-hp {
+    background-image: url('image/hp.svg');
+    width: 52px;
+    height: 52px;
+}
+
+.brand-acer {
+    background-image: url('image/acer.svg');
+    width: 94px;
+    height: 24px;
+}
+
+.brand-viewsonic {
+    background-image: url('image/viewSonic.svg');
+    width: 128px;
+    height: 21px;
+}
+
+.brand-sony {
+    background-image: url('image/sony.svg');
+    width: 128px;
+    height: 25px;
+}
+
+.brands__arrow {
+    border: none;
+    background: url('image/arrow.svg') no-repeat center;
+    background-size: contain;
+    width: 40px;
+    height: 40px;
+}
+
+.brands__pagination {
+    display: none;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+    padding: 6px 0;
+}
+
+.swiper-pagination-bullet {
+    background-color: #a89999;
+    width: 12px;
+    height: 12px;
+    margin: 0 10px;
+}
+
+.swiper-pagination-bullet-active {
+    background-color: #b5b6bc;
+}
+
+.brands__toggle {
+   
+    align-items: center;
+    gap: 18px;
+    color: #1b1c21;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-family: "TTLakes-Medium";
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: -0.2px;
+    margin-left:24px;
+    margin-top: 24px;
+    display: inline-flex;
+    position: relative;
+       
+}
+
+.brands__toggle::before {
+    content: "";
+    display: inline-block;
+    width: 8px;
+    height: 11px;
+    background: url('image/arrow-down.svg') no-repeat center;
+    background-size: contain;
+    transition: transform 0.3s ease;
+    
+}
+
+.brands__toggle.expanded::before {
+    background-image: url('image/arrow-up.svg');
+    width: 8px;
+    height: 11px;
+
+}
+
+
+@media (max-width: 767px) {
+
+.brands__pagination {
+    display: flex;
+}
+
+.brands__toggle {
+    display: none;
+}
+.brands__item:nth-child(n+10) {
+    display:none;
+}
+
+.brands__list {
+    height: 75px;
+
+}
+}
+
+
+@media (min-width: 768px) and (max-width: 1119px) {
+
+.brands__title {
+    padding-left: 24px;
+}
+
+.brands__list {
+    flex-wrap: wrap;
+    gap: 16px 24px;
+    margin-left: 24px;
+}
+
+.brands__item {
+    width: 224px;
+}
+
+.brands__item:nth-child(4) {
+    display:none;
+}
+.brands__list .brands__item:nth-child(n+8) {
+    opacity: 0;
+    max-height: 0;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.brands--expanded .brands__item:nth-child(n+7) {
+    opacity: 1;
+    max-height: 72px;
+    margin: initial;
+    padding: 0 16px;
+    pointer-events: auto;
+}
+
+.brands__toggle {
+    display: inline-flex;
+    margin-left: 24px;
+    margin-top: 24px;
+    transition: margin-top 0.3s ease;
+}
+
+  .brands--expanded .brands__toggle {
+      margin-top: 48px;
+  }
+
+  .brands__list .brands__item:nth-child(n+8) {
+      display: none;
+  }
+
+  .brands--expanded .brands__item:nth-child(n+8) {
+      display: flex;
+}
+
+
+}
+
+@media (min-width: 1120px) {
+
+.brands__title {
+    padding-left: 32px;
+}
+
+.brands__list {
+    flex-wrap: wrap;
+    gap: 16px 32px;
+    margin-left: 32px;
+}
+
+.brands__item {
+    width: 240px;
+    }
+
+.brands__list .brands__item:nth-last-child(-n+3) {
+    opacity: 0;
+    max-height: 0;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.brands--expanded .brands__item:nth-last-child(-n+3) {
+    opacity: 1;
+    max-height: 72px;
+    margin: initial;
+    padding: 0 16px;
+    pointer-events: auto;
+}
+
+.brands__toggle {
+    display: inline-flex;
+    margin-left: 32px;
+    margin-top: 24px;
+    transition: margin-top 0.3s ease;
+}
+
+.brands__list .brands__item:nth-child(n+9) {
+    display: none;
+}
+
+.brands--expanded .brands__item:nth-child(n+9) {
+    display: flex;
+}
+
+  .brands--expanded .brands__toggle {
+      margin-top: 48px;
+  }
+
+}
+
+
+@font-face {
+    font-family: "TTLakes-Medium";
+    src: url("fonts/TTLakes-Medium.ttf") format("truetype");
+}
